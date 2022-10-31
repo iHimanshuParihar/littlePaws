@@ -1,0 +1,55 @@
+<div>
+  <form
+    class="login-form"
+    [formGroup]="loginFormGroup"
+    (ngSubmit)="login(loginFormGroup.value)"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>email</mat-label>
+      <input
+        matInput
+        placeholder="xyz@gmail.com"
+        [formControl]="emailFormControl"
+        formControlName="email"
+        required
+      />
+      <mat-error
+        *ngIf="
+          emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')
+        "
+      >
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <i>required</i>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>password</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="passwordFormControl"
+        formControlName="password"
+        type="password"
+      />
+      <mat-error *ngIf="passwordFormControl.hasError('required')"
+        >Password is required</mat-error
+      >
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="mat-raised-green-button"
+      style="margin-top: 10px"
+      [disabled]="!loginFormGroup.valid"
+    >
+      <mat-spinner *ngIf="isSpinnerLoading"></mat-spinner>
+      LOGIN
+    </button>
+    <span class="login-forgot-password"
+      ><a routerLink="/forgot-password">forgot password</a></span
+    >
+  </form>
+</div>

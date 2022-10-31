@@ -1,0 +1,44 @@
+.adoption-status-container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+
+  span {
+    font-weight: bold;
+  }
+}
+.mat-raised-green-button {
+  white-space: pre-wrap !important;
+}
+
+.put-for-adoption-pets-data-container {
+  min-width: 350px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: 390px;
+  /* backdrop-filter: blur(10px); */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.gray-border {
+  border: none;
+  border-top: 2px solid green;
+  border-radius: 4px;
+}
+
+.green-border {
+  border: none;
+  border-top: 2px solid lightgray;
+  border-radius: 4px;
+}
+
+button {
+  /* font-size: 2vw !important; */
+}
+@media only screen and (max-width: 500px) {
+  .put-for-adoption-pets-data-container {
+    width: 340px;
+  }
+}

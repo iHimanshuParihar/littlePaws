@@ -1,0 +1,28 @@
+@use "../../../_colors.scss" as v;
+.footer-main-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: map-get(v.$blue-palette, 700);
+  color: v.$light-primary-text;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  font-size: 12px;
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    gap: 10px;
+    margin-top: 7px;
+  }
+  span {
+    margin-top: 50px;
+  }
+}

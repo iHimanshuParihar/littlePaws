@@ -1,0 +1,63 @@
+<div class="all-pets-main-container">
+  <mat-radio-group
+    [(ngModel)]="catOrDogRadioFilter"
+    color="primary"
+    class="catOrDogRadioFilter"
+    (change)="getAllData([], catOrDogRadioFilter)"
+  >
+    <mat-radio-button (click)="radioButtonClick()" value="dog">
+      Dog
+    </mat-radio-button>
+
+    <mat-radio-button value="cat" (click)="radioButtonClick()">
+      Cat
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field class="search-tag-input">
+    <mat-label>Filter by tags...</mat-label>
+    <mat-chip-list #chipList>
+      <mat-chip *ngFor="let pets of tagQuery" (removed)="remove(pets)">
+        {{ pets }}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input
+        placeholder="tags to search..."
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+  </mat-form-field>
+  <div>
+    <br />
+    <br />
+
+    <div class="all-pets-cards-container">
+      <div *ngFor="let pets of allPets; let i = index">
+        <div class="all-pets-single-card">
+          <div class="imageContainer">
+            <img [src]="pets.petPictureURL" class="all-pets-card-image" />
+          </div>
+          <div class="all-pets-card-info">
+            <span class="question">On littlePaws from :</span
+            ><span class="answer"> {{ pets.date }}</span>
+            <span class="question">Age :</span
+            ><span class="answer">
+              Year : {{ pets.ageInYear }} Month : {{ pets.ageInMonth }}
+            </span>
+            <button
+              mat-raised-button
+              class="all-pets-card-button"
+              (click)="openDialog(pets)"
+            >
+              More info
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

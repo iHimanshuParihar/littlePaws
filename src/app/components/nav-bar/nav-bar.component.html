@@ -1,0 +1,95 @@
+<mat-toolbar class="toolbar-container">
+  <button mat-icon-button (click)="toggleSideNav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="font-family: Ubuntu">
+    <a routerLink="/home">little<span style="color: black">Paws</span></a></span
+  >
+  <div class="login-notification-buttons">
+    <div
+      [matBadge]="numberOfNotification"
+      matBadgeOverlap="false"
+      matBadgeSize="small"
+      matBadgeColor="warn"
+      class="notification-icon"
+      *ngIf="isUserLoggedIn"
+    >
+      <fa-icon [icon]="faBell" (click)="openNotificationsDialog()"></fa-icon>
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button class="login-signup-button" mat-menu-item *ngIf="!isUserLoggedIn">
+      <a routerLink="/sign-up">Sign-up/Login</a>
+    </button>
+    <button
+      class="login-signup-button"
+      mat-menu-item
+      *ngIf="isUserLoggedIn"
+      (click)="logout()"
+    >
+      logout
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container [ngStyle]="{ position: opened ? 'fixed' : 'relative' }">
+  <mat-sidenav
+    [style.marginTop.px]="64"
+    fixedInViewport="true"
+    #sidenav
+    role="navigation"
+    mode="over"
+    [(opened)]="opened"
+  >
+    <ul>
+      <a class="user-email" *ngIf="isUserLoggedIn"
+        ><li>
+          <fa-icon [icon]="faUser"></fa-icon>
+          <div>{{ email }}</div>
+        </li></a
+      >
+      <a routerLink="/home"
+        ><li (click)="toggleSideNav()">
+          <fa-icon [icon]="faHouseChimneyWindow"></fa-icon>Home
+        </li>
+      </a>
+      <a routerLink="/about-us"
+        ><li (click)="toggleSideNav()">
+          <fa-icon [icon]="faUsers"></fa-icon>About us
+        </li></a
+      >
+      <a routerLink="/contact-us"
+        ><li (click)="toggleSideNav()">
+          <fa-icon [icon]="faPhone"></fa-icon>Contact
+        </li></a
+      >
+      <a routerLink="/faq">
+        <li (click)="toggleSideNav()">
+          <fa-icon [icon]="faQuestion"></fa-icon>faq
+        </li>
+      </a>
+      <a routerLink="/all-pets" *ngIf="isUserLoggedIn">
+        <li (click)="toggleSideNav()">
+          <fa-icon [icon]="faCat"></fa-icon>Adopt
+        </li>
+      </a>
+
+      <a routerLink="/put-for-adoption" *ngIf="isUserLoggedIn">
+        <li (click)="toggleSideNav()">
+          <fa-icon [icon]="faShieldDog"></fa-icon>Put-For-Adoption
+        </li>
+      </a>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content role="main" class="sidenav-content-container">
+    <div class="side-nav-content-container">
+      <div class="router-outlet-container">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

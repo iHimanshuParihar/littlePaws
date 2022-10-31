@@ -1,0 +1,168 @@
+<div class="home-page-main-container" style="">
+  <div class="image-carousel">
+    <carousel
+      style="border-radius: 10px"
+      [counter]="true"
+      [autoplay]="true"
+      [dots]="true"
+      [cellsToShow]="1"
+      [height]="carouselHeight"
+      [width]="carouselWidth"
+      arrowsTheme="light"
+    >
+      <div class="carousel-cell">
+        <img [src]="image_4" />
+      </div>
+      <div class="carousel-cell">
+        <img [src]="image_1" />
+      </div>
+      <div class="carousel-cell">
+        <img [src]="image_2" />
+      </div>
+      <div class="carousel-cell">
+        <img [src]="image_3" />
+      </div>
+    </carousel>
+  </div>
+  <div class="home-page-section-two">
+    <div class="col-md-4 sec1 fadeInUp">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="sec1-icon">
+            <i class="fa fa-home"></i>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <h3>Re Home</h3>
+          <p>littlePaws helps to find a shelter for homeless pet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 sec1 fadeInDown">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="sec1-icon">
+            <i class="fa fa-plus"></i>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <h3>Adopted</h3>
+          <p>
+            littlePaws has found many shelters for the pets and helped people to
+            find their campanion
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 sec1 fadeInUp">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="sec1-icon hello">
+            <i class="fa fa-hospital" routerLink="/petcare"></i>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <h3>Pet Care</h3>
+          <p>Click on the button to find details about Petcare</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="littlepaws-motive-info-container">
+    <h3>littlePaws Motive :</h3>
+    <hr />
+    <p>
+      We understand how difficult the pet adoption process may be. With our
+      initiative, we have made some progress in resolving this issue. Although
+      many people want to adopt a pet, the adoption procedure can be difficult
+      and sometimes result in applicants getting refused. This creates barriers
+      between humans and animals, contributing to the overpopulation in
+      shelters. littlePaws  tries to connect more people with pets in their
+      neighbourhood, with the goal of lowering the number of animals that are
+      homeless and providing them a shelter and humans a pet friend.
+    </p>
+  </div>
+
+  <p class="section-three-info littlepaws-motive-info-container">
+    Approximately <b>1478</b> dogs &amp; cats die every day on road in India.
+    littlePaws is on a mission to provide every dog and cat a home before
+    <b>2035</b>. It’s just one of the many ways <span>little</span>Paws! gives
+    back and helps you become a part of something larger. Join littlePaws
+    Community and help setting up Pet houses in your surrounding for strays.
+  </p>
+  <div class="pet-care-info">
+    <p>
+      Check out some vaccine info to keep an eye on your feline or hooman friend
+    </p>
+    <button
+      mat-raised-button
+      class="mat-raised-green-button"
+      routerLink="/petcare"
+    >
+      Pet Care
+    </button>
+  </div>
+
+  <div class="home-page-last-section">
+    <hr />
+    <h2>How littlePaws Works ?</h2>
+    <hr />
+    <div class="home-page-last-sub-section">
+      <div>
+        <h3>
+          <span><fa-icon [icon]="faMagnifyingGlass"></fa-icon></span>Search for
+          the pet
+        </h3>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam,
+          quis nostrud.
+        </p>
+      </div>
+
+      <div>
+        <h3>
+          <span><fa-icon [icon]="faList"></fa-icon></span>Connect with the pet
+          owner/savior directly
+        </h3>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam,
+          quis nostrud.
+        </p>
+      </div>
+      <div>
+        <h3>
+          <span><fa-icon [icon]="faHouse"></fa-icon></span>Take you campanion
+          home.
+        </h3>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam,
+          quis nostrud.
+        </p>
+      </div>
+      <div>
+        <h3>
+          <span><fa-icon [icon]="faPeopleRoof"></fa-icon></span>You got a new
+          family member.
+        </h3>
+        <hr />
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam,
+          quis nostrud.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

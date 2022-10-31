@@ -1,0 +1,96 @@
+@use "colors" as v;
+@use "@angular/material" as mat;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Source+Sans+Pro&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Ubuntu&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Source+Sans+Pro&family=Ubuntu:wght@300;400&display=swap");
+@include mat.core();
+$my-primary: mat.define-palette(mat.$blue-palette, 500);
+$my-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+.mat-raised-button {
+  color: white !important;
+  padding: 4px !important;
+  font-family: "Ubuntu";
+}
+/* .mat-raised-button.mat-button-disabled { */
+/*   opacity: 0.6; */
+/* } */
+/* on hover outline color for all mat inputs */
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: map-get(v.$blue-palette, 100);
+}
+
+.mat-raised-green-button {
+  background: map-get(v.$green-palette, 500);
+  display: flex;
+  /* justify-content: space-evenly; */
+  text-align: center;
+}
+
+.mat-raised-green-button.mat-button-disabled {
+  background: map-get(v.$green-palette, 500) !important;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-progress-spinner {
+  display: inline-block !important;
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 20px;
+}
+.mat-progress-spinner svg {
+  height: 30px !important;
+  width: 30px !important;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: white !important;
+}
+
+.mat-snack-bar-container {
+  background: map-get(v.$red-palette, 600);
+  color: white;
+  .mat-button-wrapper {
+    color: white;
+  }
+}
+.green-snack-bar {
+  background: map-get(v.$green-palette, 600);
+}
+
+.mat-card {
+  /* background-color: none; */
+  /* background: none !important; */
+}
+.red-snack-bar {
+  background: map-get(v.$red-palette, 500);
+}
+.mat-divider {
+}
+
+.custom-mat-hint {
+  text-align: left !important;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 75%;
+  margin: 5px 0px 5px 10px;
+}

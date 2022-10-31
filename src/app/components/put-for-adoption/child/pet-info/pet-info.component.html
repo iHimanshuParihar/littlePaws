@@ -1,0 +1,68 @@
+<div class="put-for-adoption-pets-data-container">
+  <div class="issue-container">
+    **In case of any issue with any pet adoption
+    <a routerLink="/contact-us" style="color: blue">contact </a>with the pet ID
+    and the issue.
+  </div>
+  <div *ngFor="let pets of petsData">
+    <!-- [ngClass]="{'my_class': step === 'step1', 'my_class2' : step === 'step2' }" -->
+    <mat-accordion hideToggle="false">
+      <mat-expansion-panel
+        style="margin-top: 10px"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header
+          [ngClass]="{
+            'gray-border': pets.adopted === 'false',
+            'green-border': pets.adopted === 'true'
+          }"
+        >
+          <mat-panel-title>{{ pets.date }}</mat-panel-title>
+          <mat-panel-description class="mat-expansion-panel-container">
+            ID : {{ pets.documentID }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div
+          style="
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            flex-direction: row;
+          "
+        >
+          <img
+            style="
+              width: 100px;
+              height: 100px;
+              border: 1px solid none;
+              border-radius: 4px;
+            "
+            src="{{ pets.petPictureURL }}"
+          />
+          <div class="adoption-status-container">
+            Adoption status :<span> {{ pets.adopted }}</span>
+            <button
+              mat-raised-button
+              class="mat-raised-green-button"
+              [disabled]="pets.adopted"
+              (click)="changeAdoptionStatus(pets.documentID)"
+            >
+              change status
+            </button>
+            <button
+              mat-raised-button
+              (click)="updatePetsInfo(pets.documentID)"
+              color="primary"
+              disabled="{{ pets.adopted }}"
+            >
+              UPDATE
+            </button>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

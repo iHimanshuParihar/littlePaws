@@ -1,0 +1,81 @@
+.interested-info-main-container {
+  width: 90vw;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 150px;
+}
+
+.interested-info-sub-container {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 10px;
+  /* width: 50vw; */
+  height: fit-content;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.interested-pets-info {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 300px;
+    /* border: 1px solid lightgray; */
+    border-radius: 4px;
+    height: 300px;
+    margin: 5px;
+  }
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
+.interested-pets-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  overflow: hidden;
+  p {
+    padding: 0;
+    margin: 0;
+    span {
+      overflow-wrap: break-word;
+      font-weight: bold;
+    }
+  }
+}
+.user-info {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  width: 40vw;
+  overflow: scroll;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+@media only screen and (max-width: 1000px) {
+  .interested-pets-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .interested-info-main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .interested-info-sub-container {
+    width: 80vw;
+  }
+  .user-info {
+    width: 80vw;
+  }
+}

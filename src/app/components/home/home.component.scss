@@ -1,0 +1,139 @@
+.sec1 .sec1-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  background: #3384d0;
+  font-size: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+span {
+  color: #76abff;
+  text-decoration: underline;
+}
+
+/***** Section 3 *****/
+
+.home-page-main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: auto;
+  height: fit-content;
+  min-height: 100vh;
+  align-items: center;
+  padding: 10px;
+}
+
+.image-carousel {
+  height: fit-content;
+}
+.carousel {
+  overflow: hidden;
+  /* border-radius: 10px !important; */
+}
+
+.carousel-cell img {
+  object-fit: fill !important;
+}
+
+.home-page-section-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90vw;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.littlepaws-motive-info-container {
+  width: 90vw;
+  border: 1px solid lightGray;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 50;
+  font-size: 1.2em;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+/* p { */
+/*   -webkit-backdrop-filter: blur(6px); */
+/*   backdrop-filter: blur(6px); */
+/* } */
+
+.pet-care-info {
+  width: 90vw;
+  display: flex;
+  border-top: 1px solid lightgray;
+  padding-top: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  .mat-raised-green-button {
+    width: 50%;
+  }
+}
+
+.home-page-last-section {
+  h2 {
+    margin-top: 0;
+    padding-top: none;
+  }
+}
+
+.home-page-last-section {
+  margin-bottom: 150px;
+}
+
+.home-page-last-sub-section {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+  width: 90vw;
+  font-weight: 50;
+  div {
+    padding: 10px;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    h3 {
+      font-size: 1.8vw;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .home-page-section-two {
+    flex-direction: column;
+    align-items: left;
+    width: 300px;
+    min-width: 300px;
+    .row {
+      display: flex;
+      align-items: left;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .home-page-last-sub-section {
+    grid-template-columns: auto;
+    div {
+      h3 {
+        font-size: 4.5vw;
+      }
+    }
+  }
+}

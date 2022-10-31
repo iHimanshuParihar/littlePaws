@@ -1,0 +1,91 @@
+@use "../../../colors" as v;
+::ng-deep {
+  .mat-tab-group {
+  }
+  .mat-tab-label-content {
+    font-size: 1.2em;
+    font-family: "Ubuntu";
+  }
+  .mat-tab-header {
+    border-bottom: none !important;
+  }
+  .mat-tab-labels {
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    overflow-wrap: anywhere;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-border-radius: 30px;
+    border: 1px solid lightGray;
+    overflow: hidden;
+  }
+  .mat-ink-bar {
+    display: none;
+  }
+  .mat-tab-label-active {
+    background: map-get(v.$blue-palette, 700);
+    color: white;
+    opacity: 1 !important;
+  }
+  .mat-tab-body-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: fit-content;
+  }
+  .mat-tab-body {
+    height: fit-content;
+  }
+}
+
+.sign-up-container {
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: fit-content; */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.sign-up-sub-container {
+  -webkit-backdrop-filter: blur(7px) !important;
+  backdrop-filter: blur(7px) !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 30px;
+  position: relative;
+  top: 100px;
+  width: 400px;
+}
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sign-up-terms {
+  font-family: "Ubuntu";
+  text-align: right;
+  font-size: 13px;
+  color: map-get(v.$blue-grey-palette, 700);
+  font-weight: 100;
+  padding: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+  ::ng-deep .custom .mat-tab-body-content {
+    min-width: 85vw;
+  }
+  .sign-up-sub-container {
+    width: 100vw;
+    padding: 10px;
+  }
+}
+@media only screen and (min-width: 550px) {
+  ::ng-deep .custom .mat-tab-body-content {
+    min-width: 400px;
+  }
+}

@@ -1,0 +1,100 @@
+
+<h1>Dog Vaccination Details</h1>
+<hr><br>
+
+
+<table mat-table [dataSource]="dataSource" style="width: 100%;" class="mat-elevation-z8">
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Vaccine Column -->
+    <ng-container matColumnDef="vaccine">
+      <th mat-header-cell *matHeaderCellDef> Vaccine </th>
+      <td mat-cell *matCellDef="let element"> {{element.vaccine}} </td>
+    </ng-container>
+  
+    <!-- Primary Dose for Puppy Column -->
+    <ng-container matColumnDef="primaryPuppy">
+      <th mat-header-cell *matHeaderCellDef> Primar Dose (Puppy)  </th>
+      <td mat-cell *matCellDef="let element"> {{element.primaryPuppy}} </td>
+    </ng-container>
+  
+    <!-- Primary Dose For Adult Column -->
+    <ng-container matColumnDef="primaryAdult">
+      <th mat-header-cell *matHeaderCellDef> Primar Dose (Adult)   </th>
+      <td mat-cell *matCellDef="let element"> {{element.primaryAdult}} </td>
+    </ng-container>
+
+        <!-- Booster Column -->
+
+    <ng-container matColumnDef="booster">
+        <th mat-header-cell *matHeaderCellDef> Boosters </th>
+        <td mat-cell *matCellDef="let element"> {{element.booster}} </td>
+      </ng-container>
+
+          <!-- Recomendation Column -->
+
+      <ng-container matColumnDef="Recommndation">
+        <th mat-header-cell *matHeaderCellDef> Recomendation </th>
+        <td mat-cell *matCellDef="let element"> {{element.Recommndation}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="header"></tr>
+    <tr mat-row *matRowDef="let row; columns: header;"></tr>
+  </table>
+  
+  
+<br>
+<h1>Cat Vaccination Details</h1>
+<hr><br>
+
+
+<table mat-table [dataSource]="dataSource2" style="width: 100%;" class="mat-elevation-z8 cat-container">
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Vaccine Column -->
+    <ng-container matColumnDef="vaccine">
+      <th mat-header-cell *matHeaderCellDef> Vaccine </th>
+      <td mat-cell *matCellDef="let element"> {{element.vaccine}} </td>
+    </ng-container>
+  
+    <!-- Primary Dose for Puppy Column -->
+    <ng-container matColumnDef="primaryPuppy">
+      <th mat-header-cell *matHeaderCellDef> Primar Dose (Puppy)  </th>
+      <td mat-cell *matCellDef="let element"> {{element.primaryPuppy}} </td>
+    </ng-container>
+  
+    <!-- Primary Dose For Adult Column -->
+    <ng-container matColumnDef="primaryAdult">
+      <th mat-header-cell *matHeaderCellDef> Primar Dose (Adult)   </th>
+      <td mat-cell *matCellDef="let element"> {{element.primaryAdult}} </td>
+    </ng-container>
+
+        <!-- Booster Column -->
+
+    <ng-container matColumnDef="booster">
+        <th mat-header-cell *matHeaderCellDef> Boosters </th>
+        <td mat-cell *matCellDef="let element"> {{element.booster}} </td>
+      </ng-container>
+
+          <!-- Recomendation Column -->
+
+      <ng-container matColumnDef="Recommndation">
+        <th mat-header-cell *matHeaderCellDef> Recomendation </th>
+        <td mat-cell *matCellDef="let element"> {{element.Recommndation}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="header"></tr>
+    <tr mat-row *matRowDef="let row; columns: header;"></tr>
+  </table>
+  
+  

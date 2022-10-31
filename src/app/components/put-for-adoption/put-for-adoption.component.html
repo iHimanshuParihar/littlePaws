@@ -1,0 +1,185 @@
+<div class="put-adoption-main">
+  <div class="put-for-adoption-main-container">
+    <mat-card class="form-card">
+      <p>Pet info</p>
+      <mat-divider></mat-divider>
+
+      <!--  id uid , OwnerName, age, spayed, image, phoneNumber, date, tags -->
+      <form
+        [formGroup]="putForAdoptionPetInfo"
+        style="margin-top: 20px"
+        (ngSubmit)="putForAdoption(putForAdoptionPetInfo.value)"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>owner name</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            name="ownerName"
+            formControlName="ownerName"
+            [formControl]="ownerName"
+          />
+          <mat-error *ngIf="ownerName.hasError('required')"
+            >name is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>phone number</mat-label>
+          <input
+            matInput
+            required
+            type="phone"
+            name="phoneNumber"
+            formControlName="phoneNumber"
+            [formControl]="phoneNumber"
+          />
+          <mat-error *ngIf="phoneNumber.hasError('required')"
+            >phone number is required</mat-error
+          >
+          <mat-error *ngIf="phoneNumber.hasError('maxLength')">
+            phone number must be 10 digit
+          </mat-error>
+        </mat-form-field>
+        <div class="">
+          <mat-radio-group
+            required
+            class="radio-button-container"
+            color="primary"
+            formControlName="catOrDog"
+            [(ngModel)]="checkedRadioButton"
+          >
+            <mat-radio-button
+              *ngFor="let v of dogOrCatObject"
+              [value]="v.value"
+              [checked]="v.checked"
+            >
+              {{ v.value }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="age-container">
+          <mat-form-field appearance="outline">
+            <mat-label>age / year</mat-label>
+            <mat-select
+              [(ngModel)]="selectedYear"
+              formControlName="ageInYear"
+              required
+            >
+              <mat-option *ngFor="let year of year" [value]="year">
+                {{ year }}
+              </mat-option>
+            </mat-select>
+            <mat-hint> pets age </mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>age / month</mat-label>
+            <mat-select
+              required
+              [(ngModel)]="selectedMonth"
+              formControlName="ageInMonth"
+            >
+              <mat-option *ngFor="let month of month" [value]="month">
+                {{ month }}
+              </mat-option>
+            </mat-select>
+            <mat-hint>eg: 4 years 3 months </mat-hint>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" style="margin-bottom: 20px">
+          <mat-label>search tags</mat-label>
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+              {{ tag }}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+            <input
+              placeholder="New tag..."
+              #tagInput
+              [formControl]="searchTags"
+              formControlName="searchTags"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)"
+            />
+          </mat-chip-list>
+          <mat-autocomplete
+            #auto="matAutocomplete"
+            (optionSelected)="selected($event)"
+          >
+            <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+              {{ tag }}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-hint>
+            important* , please add precise search tags which are applicable to
+            the pet for eg : cat, female, white, kharadi etc.
+          </mat-hint>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <div class="file-upload-container">
+          <input
+            type="file"
+            #petPictureURL
+            (change)="onFileSelected($event)"
+            name="petPictureURL"
+            formControlName="petPictureURL"
+          />
+          <!-- <p class="custom-mat-hint">upload pet's image</p> -->
+        </div>
+
+        <button
+          *ngIf="!updateButtonVisible"
+          mat-raised-button
+          class="mat-raised-green-button"
+          style="margin-top: 25px"
+          [disabled]="isDisabled()"
+        >
+          <mat-spinner *ngIf="isSpinnerLoading"></mat-spinner>
+          SUBMIT
+        </button>
+        <button
+          *ngIf="updateButtonVisible"
+          mat-raised-button
+          color="primary"
+          style="margin-top: 25px"
+          [disabled]="isDisabled()"
+        >
+          <mat-spinner *ngIf="isSpinnerLoading"></mat-spinner>
+          UPDATE
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          style="
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 5px;
+          "
+          type="reset"
+          (click)="reset()"
+        >
+          RESET
+        </button>
+        <p style="text-align: center">{{ isUploadingImageText }}</p>
+      </form>
+    </mat-card>
+  </div>
+  <div class="put-for-adoption-user-data-container">
+    <app-pet-info
+      [petsData]="allPetsData"
+      (updatePetsInfoData)="updatePetsInfo($event)"
+      (changeStatus)="changeAdoptionStatus($event)"
+    ></app-pet-info>
+  </div>
+</div>

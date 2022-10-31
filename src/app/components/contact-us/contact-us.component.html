@@ -1,0 +1,53 @@
+    <div class="contact-us-main-container">
+      <div class="form-container">
+        <form
+          [formGroup]="contactUsFormGroup"
+          (ngSubmit)="addContactUsInfo(contactUsFormGroup.value)"
+        >
+          <p>Any query ?.</p>
+          <mat-divider
+            style="margin-top: 10px; margin-bottom: 10px"
+          ></mat-divider>
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input
+              matInput
+              placeholder="Full Name"
+              formControlName="name"
+              required
+            /> </mat-form-field
+          ><br />
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="pat@example.com"
+              [formControl]="email"
+              formControlName="email"
+              required
+            />
+            <mat-error *ngIf="email.invalid">{{
+              getErrorMessage()
+            }}</mat-error> </mat-form-field
+          ><br />
+          <mat-form-field appearance="outline">
+            <mat-label>query</mat-label>
+            <textarea
+              style="height: 150px"
+              matInput
+              required
+              formControlName="query"
+            ></textarea>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            class="mat-raised-green-button"
+            style="width: 100%"
+            [disabled]="!contactUsFormGroup.valid"
+          >
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    </div>

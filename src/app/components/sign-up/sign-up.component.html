@@ -1,0 +1,73 @@
+<div class="sign-up-container">
+  <div class="sign-up-sub-container">
+    <mat-tab-group
+      animationDuration="0ms"
+      mat-stretch-tabs
+      [selectedIndex]="currentTab"
+    >
+      <mat-tab label="sign-up">
+        <div class="sign-up-content">
+          <form
+            class="sign-up-form"
+            [formGroup]="signUpFormGroup"
+            (ngSubmit)="register(signUpFormGroup.value)"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>email</mat-label>
+              <input
+                matInput
+                placeholder="xyz@gmail.com"
+                [formControl]="emailFormControl"
+                formControlName="email"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <i>required</i>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>password</mat-label>
+              <input
+                matInput
+                required
+                type="password"
+                name="password"
+                formControlName="password"
+                [formControl]="passwordFormControl"
+              />
+              <mat-error *ngIf="passwordFormControl.hasError('required')"
+                >Password is required</mat-error
+              >
+              <mat-error *ngIf="passwordFormControl.hasError('minlength')"
+                >Password must have at least
+                {{ minPassLength }} characters</mat-error
+              >
+            </mat-form-field>
+            <button
+              mat-raised-button
+              class="mat-raised-green-button"
+              style="margin-top: 10px"
+              [disabled]="!signUpFormGroup.valid"
+            >
+              <mat-spinner *ngIf="isSpinnerLoading"></mat-spinner>
+              <span>SIGN-UP</span>
+            </button>
+            <span class="sign-up-terms">Terms and conditions</span>
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab label="login">
+        <app-login></app-login>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

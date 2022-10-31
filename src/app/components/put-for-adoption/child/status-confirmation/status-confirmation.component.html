@@ -1,0 +1,20 @@
+<div>
+  <p mat-dialog-title>You sure ?.</p>
+  <hr />
+  <mat-dialog-content>
+    The pet will be considered as adopted and will not be visible to others.
+    <br />
+    **You will have to create a new adoption request again with the above form.
+  </mat-dialog-content>
+  <hr />
+  <mat-dialog-actions>
+    <button
+      mat-raised-button
+      class="mat-raised-green-button"
+      [mat-dialog-close]="confirm"
+    >
+      CONFIRM
+    </button>
+    <button (click)="closeClick()" mat-raised-button color="warn">CLOSE</button>
+  </mat-dialog-actions>
+</div>

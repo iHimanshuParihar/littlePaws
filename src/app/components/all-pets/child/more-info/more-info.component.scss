@@ -1,0 +1,47 @@
+.more-info-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 5px;
+  img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 4px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    p {
+      margin: 0;
+      padding: 0;
+      span {
+        font-family: "Ubuntu";
+        font-weight: bold;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.more-info-button-container {
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  button {
+    display: flex;
+    justify-content: center;
+    padding: 0px 5px 0px 5px;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .more-info-main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,34 @@
+.faq-container {
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  margin-bottom: 150px;
+}
+.faq-sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  min-width: 300px;
+  width: 400px;
+}
+.faq-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.faq-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .mat-expansion-panel {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .faq-sub-container {
+    width: 300px;
+  }
+}

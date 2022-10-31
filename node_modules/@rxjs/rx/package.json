@@ -1,0 +1,48 @@
+{
+  "name": "@rxjs/rx",
+  "version": "4.1.0",
+  "description": "The Reactive Extensions for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "build:all:umd:debug": "webpack index.js dist/rx.all.js --config webpack.config.js",
+    "build:all:umd:min": "webpack index.js dist/rx.all.min.js  --config webpack.config.production.js",
+    "build:all:umd": "npm run build:all:umd:debug && npm run build:all:umd:min",
+    "build:lite:umd:debug": "webpack rx.lite.js dist/rx.lite.js --config webpack.config.js",
+    "build:lite:umd:min": "webpack rx.lite.js dist/rx.lite.min.js  --config webpack.config.production.js",
+    "build:lite:umd": "npm run build:lite:umd:debug && npm run build:lite:umd:min",
+    "build:test": "npm run build:all:umd && npm run build:lite:umd && npm run test",
+    "test": "tape test/**/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reactive-Extensions/RxJS.git"
+  },
+  "keywords": [
+    "Rx",
+    "RxJS",
+    "Reactive",
+    "FRP",
+    "Promise",
+    "Callback",
+    "Observable",
+    "Observer"
+  ],
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Reactive-Extensions/RxJS/issues"
+  },
+  "homepage": "https://github.com/Reactive-Extensions/RxJS",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "lie": "^3.0.1",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.2",
+    "webpack": "^1.12.11"
+  },
+  "dependencies": {
+    "es6-map": "^0.1.3",
+    "inherits": "^2.0.1"
+  }
+}

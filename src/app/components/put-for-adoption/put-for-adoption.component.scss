@@ -1,0 +1,101 @@
+.put-adoption-main {
+  height: fit-content;
+  min-width: 350px;
+  width: 1000px;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+  margin-bottom: 150px;
+  overflow: scroll;
+}
+.put-for-adoption-main-container {
+  position: relative;
+  width: auto;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  form {
+    display: grid;
+    /* column-gap: 10px; */
+  }
+}
+
+.form-card {
+  min-width: 350px;
+  width: 400px;
+  height: fit-content;
+  background: white !important;
+
+  .mat-form-field {
+    width: inherit;
+  }
+}
+.age-container {
+  margin-bottom: 15px;
+  display: flex;
+  /* height: fit-content; */
+  /* width: inherit; */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-upload-container {
+  margin-top: 10px;
+}
+
+.put-for-adoption-user-data-container {
+  /* min-width: 360px; */
+  /* background-color: yellow; */
+  min-height: 350px;
+  height: 680px;
+  overflow: scroll;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.radio-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.mat-expansion-panel-container {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: space-around;
+  text-overflow: ellipsis;
+  align-items: right;
+  gap: 10px;
+}
+.issue-container {
+}
+
+@media only screen and (max-width: 1000px) {
+  .put-adoption-main {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+  .put-for-adoption-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-card {
+    width: 30%;
+    margin: 10px;
+  }
+}
