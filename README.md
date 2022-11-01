@@ -29,7 +29,9 @@
   - For eg : Users can filter-out animals by just usings tags like - cat, white, kharadi, pune etc.
   - based on the tags the list will be filtered out and user can proceed further.
  
-    
-    
-** Present, The data is static(ly) put in global variables which will be done to dynamic 
-   with express.js, redux & mongoDB.
+ - Backend 
+ - Firebase 
+  - Firebase Firestore ( database )
+  - Authenticate ( firebase email/password auth )
+  - Storage ( firebase storage )
+  
