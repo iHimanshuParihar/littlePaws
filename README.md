@@ -2,12 +2,15 @@
 
 # LittePaws 
 
-![imageOne](./imagess/img1.jpeg)
-![imageTwo](./Images/2.png)
-![imageThree](./Images/3.png)
-![imageFour](./Images/4.png)
-![imageFive](./Images/5.png)
-![imageSix](./Images/6.png)
+![imageOne](./imagess/img1.png)
+![imageTwo](./imagess/img2.png)
+![imageThree](./imagess/img3.png)
+![imageFour](./imagess/img4.png)
+![imageFive](./imagess/img5.png)
+![imageSix](./imagess/img6.png)
+![imageSeven](./imagess/img7.png)
+![imageEight](./imagess/img8.png)
+
 
 
 ## A animal adoption platform ( in progress ) 
