@@ -1,27 +1,30 @@
 # LittlePaws1.1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+# LittePaws 
 
-## Development server
+![imageOne](./imagess/img1.jpeg)
+![imageTwo](./Images/2.png)
+![imageThree](./Images/3.png)
+![imageFour](./Images/4.png)
+![imageFive](./Images/5.png)
+![imageSix](./Images/6.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## A animal adoption platform ( in progress ) 
+** _In progress (55-65% completed)_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## I know your first question, how it's different from available platforms ?
+- not much to be honest 
+- it's like amazon / flipkart / myntra / ajio etc..
+- different platforms same goal, sell products
+- But with different UI/UX, and some specific goals in mind.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Simply put, littlePaws is  straight-forward to use with modern concept like search by tags.
+  - For eg : Users can filter-out animals by just usings tags like - cat, white, kharadi, pune etc.
+  - based on the tags the list will be filtered out and user can proceed further.
+ 
+    
+    
+** Present, The data is static(ly) put in global variables which will be done to dynamic 
+   with express.js, redux & mongoDB.
