@@ -6,8 +6,8 @@
 ![imageTwo](./imagess/img2.png)
 ![imageThree](./imagess/img3.png)
 ![imageFour](./imagess/img5.png)
-![imageFive](./imagess/img8.png)
-![imageSix](./imagess/img6.png)
+![imageFive](./imagess/img6.png)
+![imageSix](./imagess/img8.png)
 ![imageSeven](./imagess/img7.png)
 ![imageEight](./imagess/img9.png)
 
