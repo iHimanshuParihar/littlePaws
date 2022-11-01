@@ -14,13 +14,14 @@
 
 
 ## A animal adoption platform ( in progress ) 
-** _In progress (55-65% completed)_
+** _In progress (85-90% completed)_
 
 ## I know your first question, how it's different from available platforms ?
-- not much to be honest 
+- Not much to be honest 
 - it's like amazon / flipkart / myntra / ajio etc..
 - different platforms same goal, sell products
 - But with different UI/UX, and some specific goals in mind.
+- User Friendly.
 
 
 - Simply put, littlePaws is  straight-forward to use with modern concept like search by tags.
